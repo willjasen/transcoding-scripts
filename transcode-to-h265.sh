@@ -12,10 +12,11 @@ ffmpeg -i "$INPUT_FILE" -preset medium -crf 28 -c:a aac -b:a 192k -c:v libx265 -
 
 # Check if the conversion was successful
 if [ $? -eq 0 ]; then
-    echo "Conversion successful. Deleting original file."
-    rm "$INPUT_FILE"
+    echo "Conversion successful!"
+#    echo "Conversion successful. Deleting original file."
+#    rm "$INPUT_FILE"
 else
-    echo "Conversion failed. Keeping original file."
+    echo "Conversion failed... keeping original file."
 fi
 
 exit 0
