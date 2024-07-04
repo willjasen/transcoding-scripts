@@ -8,7 +8,7 @@ OUTPUT_FILE="${INPUT_FILE%.*}.h265.mkv"
 
 # Convert video to H.265 using ffmpeg
 # ffmpeg -i "$INPUT_FILE" -c:v libx265 -c:a copy "$OUTPUT_FILE"
-ffmpeg -i "$INPUT_FILE" -preset medium -crf 28 -c:a aac -b:a 192k -c:v libx265 -c:a copy "$OUTPUT_FILE"
+ffmpeg -i "$INPUT_FILE" -preset medium -crf 28 -c:a aac -b:a 192k -c:v libx265 -c:a copy -map_metadata 0 "$OUTPUT_FILE"
 
 # Check if the conversion was successful
 if [ $? -eq 0 ]; then
