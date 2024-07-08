@@ -2,6 +2,7 @@
 
 # Input file (passed by Plex DVR)
 INPUT_FILE="$1"
+echo "Input file is: ${INPUT_FILE}";
 
 # Output file (same name, but in H.265 format)
 OUTPUT_FILE="${INPUT_FILE%.*}.h265.mkv"
